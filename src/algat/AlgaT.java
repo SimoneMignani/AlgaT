@@ -24,6 +24,7 @@ public class AlgaT extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("AlgaT - Homepage");
         stage.show();
     }
 

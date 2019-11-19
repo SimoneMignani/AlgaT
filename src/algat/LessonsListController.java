@@ -5,43 +5,42 @@
  */
 package algat;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
- * @author Simone
- */
-public class FXMLDocumentController implements Initializable {
-    
-    @FXML
-    private Label label;
-    
-    @FXML
-    public void iniziamo(ActionEvent event) throws Exception {
-        Parent parent = FXMLLoader.load(getClass().getResource("lessonsList.fxml"));
-        Scene newScene = new Scene(parent);
+ * @author Francesco
+ */ 
+public class LessonsListController implements Initializable {
+
+    //metodo che cambia la scene quando il bottone viene premuto
+    public void apriLezioneUno(ActionEvent event) throws IOException {
+        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("lezioneUno.fxml"));
+        Scene newScene = new Scene(lezioneUNO);
 
         //prendiamo le informazioni di Stage
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);
-        window.setTitle("AlgaT - Lista delle lezioni");
+        window.setTitle("AlgaT - Lezione Uno - Grafi");
         window.show();
     }
 
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

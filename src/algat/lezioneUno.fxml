@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="algat.LezioneUnoController">
+   <children>
+      <Button layoutX="685.0" layoutY="465.0" mnemonicParsing="false" onAction="#nextToQuiz" text="Avanti" />
+      <Button layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onAction="#backToLessonsList" prefHeight="25.0" prefWidth="74.0" text="Indietro" />
+      <Label layoutX="269.0" layoutY="14.0" prefHeight="34.0" prefWidth="212.0" text="Lezione Uno - Grafi">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="13.0" layoutY="48.0" prefHeight="400.0" prefWidth="724.0">
+         <content>
+            <Pane prefHeight="900.0" prefWidth="709.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" prefWidth="709.0" text="In informatica, un grafo è un tipo di dato astratto che viene usato per implementare i concetti di matematica di grafo non orientato (indiretto) e grafo orientato (diretto).&#10;&#10;Una struttura dati grafo consiste in un insieme finito (e forse mutabile) di vertici o nodi, e in un insieme di coppie di questi vertici non ordinate per grafi indiretti, o coppie ordinate per grafi diretti. Queste coppie sono gli archi o spigoli nei grafi non orientati e frecce o archi diretti nei grafi orientati.&#10;&#10;Una struttura dati grafo può inoltre associare ad ogni arco un valore o peso, ad esempio un'etichetta simbolica o un attributo numerico (costo, capacità, lunghezza, etc.)." wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="149.0" fitWidth="315.0" layoutX="355.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/grafo_base.jpg" />
+                     </image></ImageView>
+                  <Label layoutX="105.0" layoutY="322.0" prefHeight="17.0" prefWidth="205.0" text="Struttura base di un grafo: ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="421.0" prefHeight="58.0" prefWidth="635.0" text="Se le coppie di nodi sono ordinate, il grafo é detto orientato, senon sono ordinate é detto non orientato." wrapText="true">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="174.0" fitWidth="305.0" layoutX="19.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/grafo_non_orientato.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="174.0" fitWidth="305.0" layoutX="391.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/grafo_orientato.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="algat.LessonsListController">
+   <children>
+      <Label layoutX="284.0" layoutY="14.0" text="Lista delle lezioni">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnLezioneUno" layoutX="284.0" layoutY="86.0" mnemonicParsing="false" onAction="#apriLezioneUno" prefHeight="25.0" prefWidth="183.0" text="Lezione 1 - Grafi">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLezioneUno1" layoutX="284.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.0" text="Lezione 2 - Da fare">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

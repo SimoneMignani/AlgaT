@@ -19,37 +19,52 @@
       </Label>
       <ScrollPane layoutX="13.0" layoutY="48.0" prefHeight="400.0" prefWidth="724.0">
          <content>
-            <Pane prefHeight="900.0" prefWidth="709.0">
+            <Pane prefHeight="1200.0" prefWidth="709.0">
                <children>
-                  <Label layoutX="14.0" layoutY="8.0" prefWidth="709.0" text="In informatica, un grafo è un tipo di dato astratto che viene usato per implementare i concetti di matematica di grafo non orientato (indiretto) e grafo orientato (diretto).&#10;&#10;Una struttura dati grafo consiste in un insieme finito (e forse mutabile) di vertici o nodi, e in un insieme di coppie di questi vertici non ordinate per grafi indiretti, o coppie ordinate per grafi diretti. Queste coppie sono gli archi o spigoli nei grafi non orientati e frecce o archi diretti nei grafi orientati.&#10;&#10;Una struttura dati grafo può inoltre associare ad ogni arco un valore o peso, ad esempio un'etichetta simbolica o un attributo numerico (costo, capacità, lunghezza, etc.)." wrapText="true">
+                  <Label layoutX="14.0" layoutY="8.0" prefWidth="709.0" text="Un grafo è una struttura relazionale formata da un numero finito V di vertici ( o nodi ) e un numero finito E di segmenti ( archi o spigoli ) che collegano ogni nodo agli altri.&#10;&#10;Per indicare un grafo utilizzo la notazione seguente: G(V, E). Dove V è l'insieme di tutti i nodi e E è l'insieme di tutti gli archi del grafo.&#10;&#10;Una struttura dati grafo può inoltre associare ad ogni arco un valore o peso, ad esempio un'etichetta simbolica o un attributo numerico (costo, capacità, lunghezza, etc.) che può assumere anche valori negativi." wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="149.0" fitWidth="315.0" layoutX="355.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../img/grafo_base.jpg" />
-                     </image></ImageView>
-                  <Label layoutX="105.0" layoutY="322.0" prefHeight="17.0" prefWidth="205.0" text="Struttura base di un grafo: ">
+                  <ImageView fx:id="grafo_base" fitHeight="149.0" fitWidth="315.0" layoutX="293.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="69.0" layoutY="260.0" prefHeight="17.0" prefWidth="205.0" text="Struttura base di un grafo: ">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="421.0" prefHeight="58.0" prefWidth="635.0" text="Se le coppie di nodi sono ordinate, il grafo é detto orientato, senon sono ordinate é detto non orientato." wrapText="true">
+                  <Label layoutX="10.0" layoutY="365.0" prefHeight="85.0" prefWidth="689.0" text="L'insieme dei nodi è indicato con la notazione: V(G). Riprendendo il grafo precedente appartengono a V(G) tutti i nodi a, b, c, d, e, f. V(G)={a,b,c,d,e,f}." wrapText="true">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="174.0" fitWidth="305.0" layoutX="19.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../img/grafo_non_orientato.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="174.0" fitWidth="305.0" layoutX="391.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../img/grafo_orientato.jpg" />
-                     </image>
-                  </ImageView>
+                  <Label layoutX="10.0" layoutY="455.0" prefHeight="77.0" prefWidth="399.0" text="Un arco è una relazione binaria tra due nodi ed è indicato nel seguente modo:  α=(a,b) dove a e b sono due nodi V del grafo e sono detti estremi dell'arco." wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="arco" fitHeight="113.0" fitWidth="466.0" layoutX="445.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="16.0" layoutY="558.0" prefHeight="111.0" prefWidth="690.0" text="Per indicare l'insieme di tutti gli archi del grafo utilizzo la seguente notazione: E(G).&#10;Il numero di archi del grafo ne determina l'ordine. La dimensione del grafo G è invece data da da n+m, con n=|V| e m=|E| ." wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="661.0" text="Esistono due categorie principali di grafi: orientati e non orientati.">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="659.0" prefHeight="189.0" prefWidth="321.0" text="Grafo orientato. I grafi orientati hanno gli archi con una direzione. In questo caso gli archi sono frecce. Ad esempio, si può andare dal nodo 1 al nodo 2 ma non viceversa, non si può passare dal nodo 2 al nodo 1." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="grafo_orientato" fitHeight="190.0" fitWidth="284.0" layoutX="391.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="8.0" layoutY="843.0" prefHeight="189.0" prefWidth="321.0" text="Grafo non orientato. I grafi non orientati hanno gli archi con una relazione biunivoca tra i nodi. In altri termini, il nodo 1 collega il nodo 2 e il nodo 2 collega il nodo 1. Si può scorrere in entrambe le direzioni." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="grafo_non_orientato" fitHeight="190.0" fitWidth="284.0" layoutX="411.0" layoutY="869.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
          </content>

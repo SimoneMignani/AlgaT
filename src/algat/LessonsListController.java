@@ -9,11 +9,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +26,15 @@ import javafx.stage.Stage;
  * @author Francesco
  */ 
 public class LessonsListController implements Initializable {
+    
+    @FXML
+    private ImageView graduationCap;
+
+    @FXML
+    private Button btnLezioneUno;
+
+    @FXML
+    private Button btnLezioneUno1;
 
     //metodo che cambia la scene quando il bottone viene premuto
     public void apriLezioneUno(ActionEvent event) throws IOException {
@@ -40,7 +53,8 @@ public class LessonsListController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Image gb = new Image("file:img/12382-graduation-cap.png");
+        graduationCap.setImage(gb);
     }
 
 }

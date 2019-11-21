@@ -75,7 +75,7 @@ public class QuizUnoLezioneUnoController implements Initializable {
         window.show();
     }
 
-        //metodo che cambia la scene quando il bottone viene premuto
+    //metodo che cambia la scene quando il bottone viene premuto
     public void nextToUno(ActionEvent event) throws IOException {
         Parent nextQuiz = FXMLLoader.load(getClass().getResource("quizDueLezioneUno.fxml"));
         Scene newScene = new Scene(nextQuiz);
@@ -86,7 +86,7 @@ public class QuizUnoLezioneUnoController implements Initializable {
         window.setTitle("AlgaT - Lezione Grafi");
         window.show();
     }
-    
+
     @FXML
     void radioSelect(ActionEvent event) {
         RadioButton radio = (RadioButton) quiz.getSelectedToggle();
@@ -103,7 +103,7 @@ public class QuizUnoLezioneUnoController implements Initializable {
             messaggio += "Risposta errata !";
         } else if (selected.equals("opz4")) {
             messaggio += "Risposta errata !";
-        } 
+        }
         msg.setText(messaggio);
     }
 

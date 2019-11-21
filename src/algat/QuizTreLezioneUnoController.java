@@ -5,6 +5,9 @@
  */
 package algat;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,7 +31,7 @@ import javafx.stage.Stage;
  *
  * @author Francesco
  */
-public class QuizDueLezioneUnoController implements Initializable {
+public class QuizTreLezioneUnoController implements Initializable {
 
     @FXML
     private ToggleGroup quiz;
@@ -37,10 +40,7 @@ public class QuizDueLezioneUnoController implements Initializable {
     private Label msg;
 
     @FXML
-    private ImageView img;
-
-    @FXML
-    private Button btnNextUno;
+    private Button btnNext;
 
     @FXML
     private RadioButton opz1;
@@ -49,11 +49,17 @@ public class QuizDueLezioneUnoController implements Initializable {
     private RadioButton opz2;
 
     @FXML
+    private RadioButton opz3;
+
+    @FXML
     private Button btnConfirm;
 
+    @FXML
+    private RadioButton opz4;
+
     //metodo che cambia la scene quando il bottone viene premuto
-    public void backToDue(ActionEvent event) throws IOException {
-        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("quizUnoLezioneUno.fxml"));
+    public void back(ActionEvent event) throws IOException {
+        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("quizDueLezioneUno.fxml"));
         Scene newScene = new Scene(lezioneUNO);
 
         //prendiamo le informazioni di Stage
@@ -64,9 +70,9 @@ public class QuizDueLezioneUnoController implements Initializable {
     }
 
     //metodo che cambia la scene quando il bottone viene premuto
-    public void NextToDue(ActionEvent event) throws IOException {
-        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("quizTreLezioneUno.fxml"));
-        Scene newScene = new Scene(lezioneUNO);
+    public void next(ActionEvent event) throws IOException {
+        Parent nextQuiz = FXMLLoader.load(getClass().getResource("quizQuattroLezioneUno.fxml"));
+        Scene newScene = new Scene(nextQuiz);
 
         //prendiamo le informazioni di Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -85,9 +91,12 @@ public class QuizDueLezioneUnoController implements Initializable {
         if (selected.equals("opz1")) {
             messaggio += "Risposta errata !";
         } else if (selected.equals("opz2")) {
+            messaggio += "Risposta errata !";
+        } else if (selected.equals("opz3")) {
+            messaggio += "Risposta errata !";
+        } else if (selected.equals("opz4")) {
             messaggio += "Risposta corretta !";
-            btnNextUno.setDisable(false);
-
+            btnNext.setDisable(false);
         }
         msg.setText(messaggio);
     }
@@ -102,8 +111,7 @@ public class QuizDueLezioneUnoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Image image = new Image("file:img/grafoquiz.png");
-        img.setImage(image);
+        // TODO
     }
 
 }

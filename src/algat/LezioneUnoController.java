@@ -45,6 +45,9 @@ public class LezioneUnoController implements Initializable {
     @FXML
     private ImageView grafo_base;
 
+    @FXML
+    private ImageView cammini;
+
     //metodo che cambia la scene quando il bottone viene premuto
     public void backToLessonsList(ActionEvent event) throws IOException {
         Parent lezioneUNO = FXMLLoader.load(getClass().getResource("lessonsList.fxml"));
@@ -86,6 +89,9 @@ public class LezioneUnoController implements Initializable {
 
         Image gno = new Image("file:img/grafo_non_orientato.jpg");
         grafo_non_orientato.setImage(gno);
+
+        Image cam = new Image("file:img/cammini.jpg");
+        cammini.setImage(cam);
     }
 
 }

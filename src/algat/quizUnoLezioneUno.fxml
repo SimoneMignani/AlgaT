@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -16,22 +17,22 @@
             <Font name="Arial Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="230.0" layoutY="69.0" text="Qual è la dimensione del grafo in figura ?">
+      <Label alignment="CENTER" layoutX="27.0" layoutY="69.0" prefHeight="25.0" prefWidth="697.0" text="Quanti nodi e quanti archi ha il grafo in figura ?" textAlignment="CENTER">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <ImageView fx:id="img" fitHeight="202.0" fitWidth="311.0" layoutX="45.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-      <RadioButton fx:id="opz1" layoutX="404.0" layoutY="118.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="107.0" text="7">
+      <ImageView fx:id="img" fitHeight="202.0" fitWidth="311.0" layoutX="43.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
+      <RadioButton fx:id="opz1" layoutX="404.0" layoutY="118.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="141.0" text="10 nodi e 6 archi">
          <toggleGroup>
             <ToggleGroup fx:id="quiz" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="opz2" layoutX="404.0" layoutY="179.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="107.0" text="13" toggleGroup="$quiz" />
-      <RadioButton fx:id="opz3" layoutX="404.0" layoutY="238.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="107.0" text="6" toggleGroup="$quiz" />
-      <RadioButton fx:id="opz4" layoutX="404.0" layoutY="307.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="107.0" text="10" toggleGroup="$quiz" />
+      <RadioButton fx:id="opz2" layoutX="404.0" layoutY="179.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="107.0" text="6 nodi e 7 archi" toggleGroup="$quiz" />
+      <RadioButton fx:id="opz3" layoutX="404.0" layoutY="238.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="107.0" text="7 nodi e 6 archi" toggleGroup="$quiz" />
+      <RadioButton fx:id="opz4" layoutX="404.0" layoutY="307.0" mnemonicParsing="false" onAction="#radioHasChanged" prefHeight="25.0" prefWidth="168.0" text="nessuna delle precedenti" toggleGroup="$quiz" />
       <Button layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#backToLezioneGrafi" text="Indietro" />
-      <Button fx:id="btnNextUno" disable="true" layoutX="686.0" layoutY="461.0" mnemonicParsing="false" text="Avanti" />
+      <Button fx:id="btnNextUno" disable="true" layoutX="686.0" layoutY="461.0" mnemonicParsing="false" onAction="#nextToUno" style="-fx-background-color: green;" text="Avanti" textFill="#fffdfd" />
       <Label fx:id="msg" alignment="CENTER" layoutX="282.0" layoutY="363.0" prefHeight="29.0" prefWidth="188.0" />
       <Button fx:id="btnConfirm" disable="true" layoutX="311.0" layoutY="409.0" mnemonicParsing="false" onAction="#radioSelect" text="Conferma risposta">
          <font>

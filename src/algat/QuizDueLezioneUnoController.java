@@ -28,16 +28,7 @@ import javafx.stage.Stage;
  *
  * @author Francesco
  */
-public class QuizUnoLezioneUnoController implements Initializable {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private ImageView img;
+public class QuizDueLezioneUnoController implements Initializable {
 
     @FXML
     private ToggleGroup quiz;
@@ -46,10 +37,10 @@ public class QuizUnoLezioneUnoController implements Initializable {
     private Label msg;
 
     @FXML
-    private Button btnNextUno;
+    private ImageView img;
 
     @FXML
-    private Button btnConfirm;
+    private Button btnNextUno;
 
     @FXML
     private RadioButton opz1;
@@ -58,35 +49,32 @@ public class QuizUnoLezioneUnoController implements Initializable {
     private RadioButton opz2;
 
     @FXML
-    private RadioButton opz3;
-
-    @FXML
-    private RadioButton opz4;
+    private Button btnConfirm;
 
     //metodo che cambia la scene quando il bottone viene premuto
-    public void backToLezioneGrafi(ActionEvent event) throws IOException {
-        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("lezioneUno.fxml"));
+    public void backToDue(ActionEvent event) throws IOException {
+        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("QuizUnoLezioneUno.fxml"));
         Scene newScene = new Scene(lezioneUNO);
 
         //prendiamo le informazioni di Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);
-        window.setTitle("AlgaT - Lezione Grafi");
+        window.setTitle("AlgaT - Quiz Grafi");
         window.show();
     }
 
-        //metodo che cambia la scene quando il bottone viene premuto
-    public void nextToUno(ActionEvent event) throws IOException {
-        Parent nextQuiz = FXMLLoader.load(getClass().getResource("quizDueLezioneUno.fxml"));
-        Scene newScene = new Scene(nextQuiz);
+    //metodo che cambia la scene quando il bottone viene premuto
+    public void NextToDue(ActionEvent event) throws IOException {
+        Parent lezioneUNO = FXMLLoader.load(getClass().getResource("QuizUnoLezioneUno.fxml"));
+        Scene newScene = new Scene(lezioneUNO);
 
         //prendiamo le informazioni di Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);
-        window.setTitle("AlgaT - Lezione Grafi");
+        window.setTitle("AlgaT - Quiz Grafi");
         window.show();
     }
-    
+
     @FXML
     void radioSelect(ActionEvent event) {
         RadioButton radio = (RadioButton) quiz.getSelectedToggle();
@@ -95,13 +83,9 @@ public class QuizUnoLezioneUnoController implements Initializable {
         String selected = "";
         selected = radio.getId();
         if (selected.equals("opz1")) {
-            messaggio += "Risposta errata !";
-        } else if (selected.equals("opz2")) {
             messaggio += "Risposta corretta !";
             btnNextUno.setDisable(false);
-        } else if (selected.equals("opz3")) {
-            messaggio += "Risposta errata !";
-        } else if (selected.equals("opz4")) {
+        } else if (selected.equals("opz2")) {
             messaggio += "Risposta errata !";
         } 
         msg.setText(messaggio);
@@ -117,9 +101,8 @@ public class QuizUnoLezioneUnoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        Image ge = new Image("file:img/grafo_esempio.jpg");
-        img.setImage(ge);
+        Image image = new Image("file:img/grafoquiz.png");
+        img.setImage(image);
     }
 
 }

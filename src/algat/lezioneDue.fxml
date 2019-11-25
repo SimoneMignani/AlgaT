@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="algat.LezioneDueController">
+   <children>
+      <Button layoutX="685.0" layoutY="465.0" mnemonicParsing="false" onAction="#nextToQuiz" prefHeight="25.0" prefWidth="53.0" text="Quiz" />
+      <Button layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onAction="#backToLessonsList" prefHeight="25.0" prefWidth="74.0" text="Indietro" />
+      <Label layoutX="211.0" layoutY="14.0" prefHeight="34.0" prefWidth="327.0" text="Lezione Due - Cammini Minimi" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="13.0" layoutY="48.0" prefHeight="408.0" prefWidth="724.0">
+         <content>
+            <Pane prefHeight="1150.0" prefWidth="709.0">
+               <children>
+                  <Label layoutY="14.0" prefHeight="42.0" prefWidth="686.0" text="La lezione precedente è servita ad introdurre questa lezione. Senza sapere cos'è un grafo non si può affrontare il problema dei cammini minimi.&#10;" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="60.0" layoutY="81.0" prefHeight="17.0" prefWidth="205.0" text="Cos'è un cammino minimo?">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="113.0" prefHeight="91.0" prefWidth="686.0" text="Sia G=(V,E) un grafo orientato con costi w sugli archi. Il costo di un cammino π=&lt;v0,v1,v2,… ,vk&gt; è dato dalla somma dei costi su ogni arco che compone il cammino. Un cammino minimo tra due nodi (o vertici) di un grafo è quel percorso che collega i suddetti nodi e che minimizza la somma dei costi associati all'attraversamento di ciascun arco." wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="204.0" text="Proprietà:" underline="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="231.0" text="• Sottostruttura ottima: ogni sottocammino di uncammino minimo è anch’esso minimo;" wrapText="true" />
+                  <Label layoutX="14.0" layoutY="259.0" prefHeight="34.0" prefWidth="730.0" text="• Grafi con cicli negativi: se due vertici x e yappartengono a un ciclo di costo negativo, nonesiste nessun cammino minimo finito tra di essi." wrapText="true" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

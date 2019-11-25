@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="algat.CongratulazioniDueController">
+   <children>
+      <Label layoutX="67.0" layoutY="110.0" text="Hai terminato con successo la lezione 2 sui Cammini Minimi" textFill="#2a8a48">
+         <font>
+            <Font name="Calibri Bold Italic" size="25.0" />
+         </font></Label>
+      <Label layoutX="218.0" layoutY="38.0" text="Congratulazioni!" textFill="#2a8a48">
+         <font>
+            <Font name="Calibri Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="454.0" text="Torna al menù delle lezioni per continuare">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="325.0" layoutY="397.0" mnemonicParsing="false" onAction="#backToLezioni" prefHeight="39.0" prefWidth="99.0" text="Lezioni">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <ImageView fx:id="fotosx" fitHeight="175.0" fitWidth="175.0" layoutX="150.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/sparaCoriandoli.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fotodx" fitHeight="175.0" fitWidth="175.0" layoutX="418.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/sparaCoriandoli2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

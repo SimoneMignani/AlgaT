@@ -53,7 +53,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="btnLezioneUno1" alignment="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="269.0" text="Lezione 2 - Da fare">
+                  <Button fx:id="btnLezioneUno1" alignment="CENTER" mnemonicParsing="false" onAction="#apriLezioneDue" prefHeight="29.0" prefWidth="269.0" text="Lezione 2 - Cammini Minimi">
                      <font>
                         <Font size="15.0" />
                      </font>

@@ -63,13 +63,12 @@ public class LezioniController implements Initializable{
         //btn.setId(lessonName);
         btn.setOnAction((ActionEvent event) -> {
             try {
-                currentLesson = lessonName;
                 //Parent lezione = FXMLLoader.load(getClass().getResource("lezione.fxml"));
                 FXMLLoader lezioneLoader = new FXMLLoader(getClass().getResource("lezione.fxml"));
                 Scene newScene = new Scene(lezioneLoader.load());
                 
                 LezioneController controller = lezioneLoader.getController();
-                controller.setCurrentLesson(currentLesson);
+                controller.setCurrentLesson(lessonName);
                 //prendiamo le informazioni di Stage
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(newScene);

@@ -28,7 +28,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     public void iniziamo(ActionEvent event) throws Exception {
-        Parent parent = FXMLLoader.load(getClass().getResource("lessonsList.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("lezioni.fxml"));
         Scene newScene = new Scene(parent);
 
         //prendiamo le informazioni di Stage

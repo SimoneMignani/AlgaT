@@ -1,0 +1,29 @@
+title:
+question:
+image:(url su img/)
+answer:a1,a2,a3,a4,a5
+correct:opz2 (id del radiobutton)
+;
+title:
+question:
+image:(url su img/)
+answer:a1,a2,a3,a4,a5
+correct:opz2 (id del radiobutton)
+;
+title:
+question:
+image:(url su img/)
+answer:a1,a2,a3,a4,a5
+correct:opz2 (id del radiobutton)
+;
+title:
+question:
+image:(url su img/)
+answer:a1,a2,a3,a4,a5
+correct:opz2 (id del radiobutton)
+;
+title:
+question:
+image:(url su img/)
+answer:a1,a2,a3,a4,a5
+correct:opz2 (id del radiobutton)

@@ -1,29 +1,35 @@
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
+title:Quiz Cammini Minimi (1/7)
+question:Cos'è un cammino minimo?
+image:-
+answer:il cammino col minor numero di archi/il cammino col minor numero di nodi/il cammino con costo complessivo minore tra due nodi/nessuna delle precedenti
+correct:opt3
+;title:Quiz Cammini Minimi (2/7)
+question:Qual è il cammino minimo dal nodo 1 al nodo 4?
+image:img/camminominimo.jpg
+answer:1 - 2 - 3 - 4/1 - 6 - 5 - 4/1 - 6 - 5 - 3 - 4/1 - 6 - 5 - 2 - 3 - 4
+correct:opt4
+;title:Quiz Cammini Minimi (3/5) 
+question:Se due nodi x e y appartengono a un ciclo di costo negativo, potrà esistere un cammino minimo finito tra x e y?
+image:-
+answer:No, non può esistere/Sì, ma dipende dalla somma dei costi/Sì, può sempre esistere un cammino minimo/No, ma solo se il cammino è formato unicamente da x e y
+correct:opt1
+;title:Quiz Cammini Minimi (4/7)
+question:È possibile utilizzare l'algoritmo di Dijkstra per trovare un cammino minimo dal nodo 1 al nodo 6?
+image:img/aaa.jpg
+answer:Sì/No
+correct:opt2
+;title:Quiz Cammini Minimi (5/7)
+question:Per quale motivo non è possibile utilizzare l'algoritmo di Dijkstra?
+image:img/aaa.jpg
+answer:Ci sono dei costi negativi/Non esiste nessun cammino minimo/Il numero di nodi non lo permette/Il numero di archi non lo permette
+correct:opt1
+;title:Quiz Cammini Minimi (6/7)
+question:Come funziona l'algoritmo di Bellman - Ford?
+image:-
+answer:Nessuna delle risposte seguenti/risolve problemi con una sola sorgente usando l'euristica per tentare di velocizzare la ricerca/Si guardano i nodi adiacenti e gli si assegna come etichetta costo dell'arco + etichetta del nodo precedente/Si guardano tutti i nodi del possibile cammino e si fa il prodotto tra il numero di nodi e la somma dei costi degli archi
+correct:opt3
+;title:Quiz Cammini Minimi (7/7)
+question:L'algoritmo di Bellman - Ford è applicabile se ci sono costi negativi?
+image:-
+answer:Sì/No
+correct:opt1

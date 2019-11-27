@@ -6,12 +6,8 @@
 package algat;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,8 +38,17 @@ public class LezioneController implements Initializable {
     private Button btnIndietro;
 
     @FXML
-    void continua(ActionEvent event) {
+    void continua(ActionEvent event) throws IOException {
+        FXMLLoader quizLoader = new FXMLLoader(getClass().getResource("quiz.fxml"));
+        Scene newScene = new Scene(quizLoader.load());
 
+        QuizController controller = quizLoader.getController();
+        controller.setCurrentLesson(currentLesson);
+        //prendiamo le informazioni di Stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(newScene);
+        window.setTitle("AlgaT - Quiz");
+        window.show();
     }
 
     @FXML

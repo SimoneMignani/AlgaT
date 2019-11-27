@@ -1,29 +1,25 @@
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
-;
-title:
-question:
-image:(url su img/)
-answer:a1,a2,a3,a4,a5
-correct:opz2 (id del radiobutton)
+title:Quiz grafi (1/5)
+question:Quanti nodi e quanti archi ha il grafo in figura ?
+image:img/grafo_esempio.jpg
+answer:10 nodi e 6 archi/6 nodi e 7 archi/7 nodi e 6 archi/nessuna delle precedenti
+correct:opt2
+;title:Quiz grafi (2/5)
+question:É possibile trovare un cammino che coinvolga tutti i nodi grafo in figura ?
+image:img/grafoquiz.png
+answer:Sì/No
+correct:opt2
+;title:Quiz grafi (3/5)
+question:Quale caratteristica fa si che un grafo sia orientato ?
+image:-
+answer:La possibilità di percorrere gli archi in entrambe le direzioni/I nodi sono tutti collegati tra di loro/Gli archi hanno tutti costo positivo/Gli archi possiedono una direzione
+correct:opt4
+;title:Quiz grafi (4/5)
+question:Qual è la dimensione del grafo in figura ?
+image:img/grafo_esempio.jpg
+answer:13/6/7/11
+correct:opt1
+;title:Quiz grafi (5/5)
+question:Quali elementi contiene l'insieme V(G) relativo al grafo in figura ?
+image:img/grafo_esempio.jpg
+answer:{(a,b), (a,c), (b,d), (c,e), (d,f), (e,f)}/{a, c, e, f}/è un insieme vuoto/{a, e, f, c, b, d}
+correct:opt4

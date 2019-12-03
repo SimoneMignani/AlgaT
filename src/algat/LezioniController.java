@@ -37,7 +37,19 @@ public class LezioniController implements Initializable{
     @FXML
     private VBox buttonBox;
     
+    @FXML
+    private ImageView algoImg;
+    
+    @FXML
+    private Button runBtn;
+    
+    
     private String currentLesson;
+    
+    @FXML
+    void runAlgorithm(ActionEvent event) {
+        //LANCIO LA FINESTRA DELL' ALGORITMO
+    }
 
     public void checkLessons() throws IOException {
         File dir = new File("quiz");
@@ -87,8 +99,10 @@ public class LezioniController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Image gb = new Image("file:img/12382-graduation-cap.png");
+        Image gb = new Image("file:img/graduation-cap_1f393.png");
         graduationCap.setImage(gb);
+        gb = new Image("file:img/electric-light-bulb_1f4a1.png");
+        algoImg.setImage(gb);
         
         try {
             checkLessons();

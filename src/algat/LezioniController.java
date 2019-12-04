@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -47,8 +48,15 @@ public class LezioniController implements Initializable{
     private String currentLesson;
     
     @FXML
-    void runAlgorithm(ActionEvent event) {
-        //LANCIO LA FINESTRA DELL' ALGORITMO
+    void runAlgorithm(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("algoritmo.fxml"));
+        Scene newScene = new Scene(parent);
+
+        //prendiamo le informazioni di Stage
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        window.setScene(newScene);
+        window.setTitle("AlgaT - Dijkstra");
+        window.show();
     }
 
     public void checkLessons() throws IOException {

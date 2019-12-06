@@ -34,9 +34,14 @@ public class WeightAdderController implements Initializable {
     void setWeight(ActionEvent event) {
         try {
             input = Integer.parseInt(weightInput.getText());
-            AlgoritmoController.setCost(input);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.close();
+            if(input < 0) {
+                errore.setText("Non possono essere inseriti costi negativi.");
+                weightInput.setText("");
+            } else {
+                AlgoritmoController.setCost(input);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.close();
+            }    
         } catch (Exception e) {
             errore.setText("Errore! Inserisci un intero.");
             weightInput.setText("");

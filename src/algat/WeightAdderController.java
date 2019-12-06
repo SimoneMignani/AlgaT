@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,16 +24,23 @@ public class WeightAdderController implements Initializable {
 
     int input;
 
-
     @FXML
     private TextField weightInput;
 
     @FXML
+    private Label errore;
+
+    @FXML
     void setWeight(ActionEvent event) {
-        input = Integer.parseInt(weightInput.getText());
-        AlgoritmoController.setCost(input);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.close();
+        try {
+            input = Integer.parseInt(weightInput.getText());
+            AlgoritmoController.setCost(input);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.close();
+        } catch (Exception e) {
+            errore.setText("Errore! Inserisci un intero.");
+            weightInput.setText("");
+        }
     }
 
     /**

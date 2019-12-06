@@ -33,6 +33,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -97,14 +98,12 @@ public class AlgoritmoController implements Initializable {
     ArrayList<Text> etichette = new ArrayList<>();
     ArrayList<Circle> cerchi = new ArrayList<>();
     ArrayList<Line> linee = new ArrayList<>();
-    
+
     @FXML
     void Menu(ActionEvent event) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("lezioni.fxml"));
         Scene newScene = new Scene(parent);
-
-        //prendiamo le informazioni di Stage
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);
         window.setTitle("AlgaT - Menu Principale");
         window.show();
@@ -183,7 +182,7 @@ public class AlgoritmoController implements Initializable {
             cerchi.remove(cerchi.size() - 1);
             codaPriorita.remove(codaPriorita.size() - 1);
             num_nodi--;
-            
+
         } else if (pannello.getChildren().get(0) instanceof Line) {
             msg.setText("Arco rimosso");
             pannello.getChildren().remove(pannello.getChildren().size() - 1);
@@ -218,9 +217,11 @@ public class AlgoritmoController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("weightAdder.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
         stage.setTitle("Inserisci");
+        stage.setOnCloseRequest(e -> { //se si chiude la finestra senza inserire un peso
+            setCost(0);
+        });
         stage.show();
 
     }

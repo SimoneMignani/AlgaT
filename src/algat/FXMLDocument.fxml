@@ -41,6 +41,19 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Button>
+                  <Label text="Sviluppata da" translateY="123.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Francesco Bassanelli, Simone Mignani, Francesco Pezzulli" translateY="125.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
          </children>

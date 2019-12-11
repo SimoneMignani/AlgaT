@@ -43,7 +43,7 @@
             </HBox>
          </children>
       </GridPane>
-      <Button fx:id="avanti" alignment="CENTER" disable="true" layoutX="625.0" layoutY="458.0" mnemonicParsing="false" onAction="#avanti" prefHeight="29.0" prefWidth="100.0" text="Avanti">
+      <Button fx:id="avanti" alignment="CENTER" disable="true" layoutX="625.0" layoutY="458.0" mnemonicParsing="false" onAction="#avanti" prefHeight="29.0" prefWidth="100.0" style="-fx-background-color: #0095ff; -fx-border-color: #0040ff; -fx-border-radius: 5; -fx-background-radius: 6;" text="Avanti" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -52,7 +52,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button fx:id="conferma" layoutX="324.0" layoutY="458.0" mnemonicParsing="false" onAction="#conferma" prefHeight="29.0" prefWidth="100.0" text="Conferma">
+      <Button fx:id="conferma" layoutX="324.0" layoutY="458.0" mnemonicParsing="false" onAction="#conferma" prefHeight="29.0" prefWidth="100.0" style="-fx-background-color: lightgreen; -fx-border-color: green; -fx-border-radius: 5; -fx-background-radius: 6;" text="Conferma">
          <font>
             <Font size="15.0" />
          </font></Button>

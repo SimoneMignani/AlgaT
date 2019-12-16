@@ -106,15 +106,18 @@ public class AlgoritmoController implements Initializable {
         double dx = node1X - node2X;
         double dy = node1Y - node2Y;
         double angle = Math.atan2(dy, dx);
-        double x1 = Math.cos(angle + arrowAngle) * arrowLength + node2X;
-        double y1 = Math.sin(angle + arrowAngle) * arrowLength + node2Y;
-        double x2 = Math.cos(angle - arrowAngle) * arrowLength + node2X;
-        double y2 = Math.sin(angle - arrowAngle) * arrowLength + node2Y;
+        double length = Math.sqrt(dx*dx + dy*dy)+1200;
+        double endX = node2X + (Math.cos(angle)/57.2958) * length;
+        double endY = node2Y + (Math.sin(angle)/57.2958) * length;
+        double x1 = Math.cos(angle + arrowAngle) * arrowLength + endX;
+        double y1 = Math.sin(angle + arrowAngle) * arrowLength + endY;
+        double x2 = Math.cos(angle - arrowAngle) * arrowLength + endX;
+        double y2 = Math.sin(angle - arrowAngle) * arrowLength + endY;
         
-        Line line1 = new Line(node2X, node2Y, x1, y1);
+        Line line1 = new Line(endX, endY, x1, y1);
         line1.setId(String.valueOf(id));
         line1.setStrokeWidth(2);
-        Line line2 = new Line(node2X, node2Y, x2, y2);
+        Line line2 = new Line(endX, endY, x2, y2);
         line2.setId(String.valueOf(id));
         line2.setStrokeWidth(2);
         //aggiungo le linee nel grafo
@@ -526,11 +529,10 @@ public class AlgoritmoController implements Initializable {
                             lineId += circle.getId();
                             line.setId(String.valueOf(lineId));
                             line.setStrokeWidth(2);
-                            //coordinate della posizione della freccia
-                            double xfreccia = (e.getX()+(e.getX()+((e.getX()+last_x)/2))/2)/2;
-                            double yfreccia = (e.getY()+(e.getY()+((e.getY()+last_y)/2))/2)/2;
+                            //double xfreccia = (e.getX()+(e.getX()+((e.getX()+last_x)/2))/2)/2;
+                            //double yfreccia = (e.getY()+(e.getY()+((e.getY()+last_y)/2))/2)/2;
                             //disegna la freccia sulla linea
-                            drawArrow(pannello, last_x, last_y, xfreccia, yfreccia, lineId); 
+                            drawArrow(pannello, last_x, last_y, e.getX(), e.getY(), lineId); 
                             pannello.getChildren().add(line);
                             line.toBack();
                             linee.add(line);

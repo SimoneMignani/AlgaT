@@ -30,30 +30,29 @@ import javafx.stage.Stage;
  *
  * @author francesco
  */
-public class LezioniController implements Initializable{
+public class LezioniController implements Initializable {
 
     @FXML
     private ImageView graduationCap;
 
     @FXML
     private VBox buttonBox;
-    
+
     @FXML
     private ImageView algoImg;
-    
+
     @FXML
     private Button runBtn;
-    
-    
+
     private String currentLesson;
-    
+
     @FXML
     void runAlgorithm(ActionEvent event) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("algoritmo.fxml"));
         Scene newScene = new Scene(parent);
 
         //prendiamo le informazioni di Stage
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);
         window.setTitle("AlgaT - Dijkstra");
         window.show();
@@ -65,12 +64,31 @@ public class LezioniController implements Initializable{
         File[] filelist = dir.listFiles((File dir1, String name) -> name.toLowerCase().endsWith(".txt"));
 
         int count = 1;
+        
         for (File filelist1 : filelist) {
+            String fileName = filelist1.getName();
+            if (fileName.equals("Grafi.txt")) {
+                String lessonName = fileName.split("\\.")[0];
+                createLessonButton(lessonName, count);
+                count++;
+                break;
+            }
+        }
+        
+        for (File filelist1 : filelist) {
+            String fileName = filelist1.getName();
+            if (!fileName.equals("Grafi.txt")) {
+                String lessonName = fileName.split("\\.")[0];
+                createLessonButton(lessonName, count);
+                count++;
+            }
+        }
+        /*for (File filelist1 : filelist) {
             String fileName = filelist1.getName();
             String lessonName = fileName.split("\\.")[0];
             createLessonButton(lessonName, count);
             count++;
-        }
+        }*/
     }
 
     public void createLessonButton(String lessonName, int lessonNumber) {
@@ -85,7 +103,7 @@ public class LezioniController implements Initializable{
                 //Parent lezione = FXMLLoader.load(getClass().getResource("lezione.fxml"));
                 FXMLLoader lezioneLoader = new FXMLLoader(getClass().getResource("lezione.fxml"));
                 Scene newScene = new Scene(lezioneLoader.load());
-                
+
                 LezioneController controller = lezioneLoader.getController();
                 controller.setCurrentLesson(lessonName);
                 //prendiamo le informazioni di Stage
@@ -111,7 +129,7 @@ public class LezioniController implements Initializable{
         graduationCap.setImage(gb);
         gb = new Image("file:img/electric-light-bulb_1f4a1.png");
         algoImg.setImage(gb);
-        
+
         try {
             checkLessons();
         } catch (IOException ex) {

@@ -21,6 +21,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -99,6 +100,31 @@ public class AlgoritmoController implements Initializable {
     ArrayList<Circle> cerchi = new ArrayList<>();
     ArrayList<Line> linee = new ArrayList<>();
 
+    private void drawArrow(Pane p, double node1X, double node1Y, double node2X, double node2Y, String id) {
+        double arrowAngle = Math.toRadians(45.0);
+        double arrowLength = 10.0;
+        double dx = node1X - node2X;
+        double dy = node1Y - node2Y;
+        double angle = Math.atan2(dy, dx);
+        double x1 = Math.cos(angle + arrowAngle) * arrowLength + node2X;
+        double y1 = Math.sin(angle + arrowAngle) * arrowLength + node2Y;
+        double x2 = Math.cos(angle - arrowAngle) * arrowLength + node2X;
+        double y2 = Math.sin(angle - arrowAngle) * arrowLength + node2Y;
+        
+        Line line1 = new Line(node2X, node2Y, x1, y1);
+        line1.setId(String.valueOf(id));
+        line1.setStrokeWidth(2);
+        Line line2 = new Line(node2X, node2Y, x2, y2);
+        line2.setId(String.valueOf(id));
+        line2.setStrokeWidth(2);
+        //aggiungo le linee nel grafo
+        pannello.getChildren().add(line1);
+        pannello.getChildren().add(line2);
+        //aggiungo le linee all'array delle linee
+        linee.add(line1);
+        linee.add(line2);
+    }
+
     @FXML
     void Menu(ActionEvent event) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("lezioni.fxml"));
@@ -130,7 +156,7 @@ public class AlgoritmoController implements Initializable {
     }
 
     @FXML
-    void clearGraph(ActionEvent event) {
+    void clearGraph(ActionEvent event) { //tasto cancella
         pannello.getChildren().clear();
         num_nodi = 0;
         msg.setText("Grafo rimosso!\nInserisci i nodi cliccando nell'area specifica");
@@ -155,7 +181,7 @@ public class AlgoritmoController implements Initializable {
     }
 
     @FXML
-    void clearLastModify(ActionEvent event) {
+    void clearLastModify(ActionEvent event) { //tasto indietro
         if (pannello.getChildren().get(pannello.getChildren().size() - 3) instanceof Circle) {
             msg.setText("Nodo rimosso");
             int count = 0;
@@ -185,8 +211,15 @@ public class AlgoritmoController implements Initializable {
 
         } else if (pannello.getChildren().get(0) instanceof Line) {
             msg.setText("Arco rimosso");
+            //rimuove la freccia (composta da due linee) e il costo
             pannello.getChildren().remove(pannello.getChildren().size() - 1);
+            pannello.getChildren().remove(pannello.getChildren().size() - 1);
+            pannello.getChildren().remove(pannello.getChildren().size() - 1);
+            //rimuove la linee tra i due archi
             pannello.getChildren().remove(0);
+            //tre linee da rimuovere: linea e freccia (due linee)
+            linee.remove(linee.size() - 1);
+            linee.remove(linee.size() - 1);
             linee.remove(linee.size() - 1);
         }
 
@@ -269,8 +302,11 @@ public class AlgoritmoController implements Initializable {
             if ((i + 1) != camminoMinimo.size()) {  //controllo se si è all'ultimo nodo (cioè non esistono più rami dopo)
                 for (int j = 0; j < linee.size(); j++) {
                     if (linee.get(j).getId().equals(String.valueOf(camminoMinimo.get(i) + "/" + camminoMinimo.get(i + 1)))) {
+                        //deve colorare la linea tra i due nodi e le due linee che compongono la freccia
+                        //tutte e tre le linee si chiamano con lo stesso id
                         linee.get(j).setStroke(Color.GOLD);
-
+                        linee.get(j+1).setStroke(Color.GOLD);
+                        linee.get(j+2).setStroke(Color.GOLD);
                         break;
                     }
                 }
@@ -391,11 +427,11 @@ public class AlgoritmoController implements Initializable {
                         linee.get(i).setStroke(Color.BLACK);
                     }
                 }
+                clear.setDisable(false);
             }
             //fine algoritmo
             if (codaPriorita.get(0).destinazione || codaPriorita.isEmpty()) {
                 runPassi.setText("Esegui per passi");
-                clear.setDisable(false);
                 printCammino();
                 nodoPrecedente = "";
             } else { //ogni passo del algortimo
@@ -487,18 +523,16 @@ public class AlgoritmoController implements Initializable {
                             Line line = new Line(last_x, last_y, e.getX(), e.getY());
                             lineId += circle.getId();
                             line.setId(String.valueOf(lineId));
-                            line.setStrokeWidth(3);
+                            line.setStrokeWidth(2);
+                            //coordinate della posizione della freccia
+                            double xfreccia = (e.getX()+(e.getX()+((e.getX()+last_x)/2))/2)/2;
+                            double yfreccia = (e.getY()+(e.getY()+((e.getY()+last_y)/2))/2)/2;
+                            //disegna la freccia sulla linea
+                            drawArrow(pannello, last_x, last_y, xfreccia, yfreccia, lineId); 
                             pannello.getChildren().add(line);
                             line.toBack();
                             linee.add(line);
                             lineId = "";
-                            /*Polygon freccia = new Polygon();
-                            freccia.getPoints().addAll(new Double[]{
-                                (e.getX()+((e.getX()+last_x)/2))/2, (e.getY()+((e.getY()+last_y)/2))/2,
-                                ((e.getX()+last_x)/2)-10,((e.getY()+last_y)/2)-10,
-                                ((e.getX()+last_x)/2)-10,((e.getY()+last_y)/2)+10});
-                            pannello.getChildren().add(freccia);
-                            freccia.setFill(Color.RED);*/
                             msg.setText("SECONDO nodo cliccato.\nArco creato.");
                             try {
                                 addWeight();

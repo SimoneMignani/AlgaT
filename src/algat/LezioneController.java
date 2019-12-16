@@ -80,7 +80,7 @@ public class LezioneController implements Initializable {
             String urlPDF = "http://francesco.pezzulli.tw.cs.unibo.it/" + currentLesson + ".pdf";
             String urlweb = "http://docs.google.com/gview?embedded=true&url=" + urlPDF;
             //String urlwebGDrive = "https://drive.google.com/viewerng/viewer?embedded=true&url=" + urlPDF;
-
+            
             web.load(urlweb);
         });
     }

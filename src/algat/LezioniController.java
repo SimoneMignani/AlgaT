@@ -58,7 +58,7 @@ public class LezioniController implements Initializable {
         window.show();
     }
 
-    public void checkLessons() throws IOException {
+    public void checkLessons() throws IOException { //prende i file txt da una cartella quiz
         File dir = new File("quiz");
 
         File[] filelist = dir.listFiles((File dir1, String name) -> name.toLowerCase().endsWith(".txt"));

@@ -345,7 +345,8 @@ public class AlgoritmoController implements Initializable {
 
     public void dijkstra() throws InterruptedException {
         //controlla se esiste un cammino completo (circa ahahah)
-        if ((linee.size() + 1) >= cerchi.size()) {
+        //fa diviso 3 perchè per ogni arco vengono aggiunte 3 linee
+        if ((linee.size()/3 + 1) >= cerchi.size()) {
 
             back.setDisable(true);
             opz1.setDisable(true);
@@ -396,7 +397,8 @@ public class AlgoritmoController implements Initializable {
 
     public void dijkstraPerPassi() throws InterruptedException {
         //controlla se esiste un cammino completo (circa ahahah)
-        if ((linee.size() + 1) >= cerchi.size()) {
+        //fa diviso 3 perchè per ogni arco vengono aggiunte 3 linee
+        if ((linee.size()/3 + 1) >= cerchi.size()) {
 
             back.setDisable(true);
             clear.setDisable(true);
@@ -429,12 +431,12 @@ public class AlgoritmoController implements Initializable {
                 }
                 clear.setDisable(false);
             }
-            //fine algoritmo
-            if (codaPriorita.get(0).destinazione || codaPriorita.isEmpty()) {
+            
+            if (codaPriorita.get(0).destinazione || codaPriorita.isEmpty()) { //fine algoritmo 
                 runPassi.setText("Esegui per passi");
                 printCammino();
                 nodoPrecedente = "";
-            } else { //ogni passo del algortimo
+            } else {    //ogni passo del algortimo
                 //colora il nodo attuale di giallo
                 for (int j = 0; j < cerchi.size(); j++) {
                     if (cerchi.get(j).getId().equals(codaPriorita.get(0).id)) {

@@ -90,7 +90,7 @@ public class QuizController implements Initializable {
                         //prendiamo le informazioni di Stage
                         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window.setScene(newScene);
-                        window.setTitle("AlgaT - Lista delle lezioni");
+                        window.setTitle("AlgaT - Menu Principale");
                         window.show();
                     } catch (IOException ex) {
                         Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
@@ -152,7 +152,7 @@ public class QuizController implements Initializable {
         quizPos++;
     }
 
-    public void readFile() throws FileNotFoundException {
+    public void readFile() throws FileNotFoundException {   //ti carica i quiz
         File file = new File("quiz/" + currentLesson + ".txt");
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
@@ -160,7 +160,7 @@ public class QuizController implements Initializable {
         }
     }
 
-    public void loadComponents() throws FileNotFoundException {
+    public void loadComponents() throws FileNotFoundException {  //carica i campi del relativo quiz
         rgroup = new ToggleGroup();
         quizLength = filetxt.split(";").length;
         String currentQuiz = filetxt.split(";")[quizPos];

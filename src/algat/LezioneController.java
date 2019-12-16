@@ -59,7 +59,7 @@ public class LezioneController implements Initializable {
         //prendiamo le informazioni di Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);
-        window.setTitle("AlgaT - Lista delle lezioni");
+        window.setTitle("AlgaT - Menu Principale");
         window.show();
     }
 
